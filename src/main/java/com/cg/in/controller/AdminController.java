@@ -2,7 +2,10 @@ package com.cg.in.controller;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,6 +37,12 @@ public class AdminController {
     public List<EmployeeBo> getAllEmployeesFeign() {
     	log.info(Utility.ALLEMP);
         return employeeService.getAllEmployeesFeign();
+    }
+    
+    @PostMapping("/feign/create")
+    public ResponseEntity<EmployeeBo> createEmployee(@RequestBody EmployeeBo employee)
+    {
+    	return employeeService.createEmployee(employee);
     }
 	
 }
