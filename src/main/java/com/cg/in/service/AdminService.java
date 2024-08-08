@@ -15,4 +15,8 @@ public interface AdminService {
 	 
 	 public ResponseEntity<EmployeeBo> createEmployee(EmployeeBo employee);
 
+	EmployeeBo getEmployeeByIdRestTemplate(int id);
+
+	ResponseEntity<EmployeeBo> createEmployeeRestTemplate(EmployeeBo employeeBo);
+
 }

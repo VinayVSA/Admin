@@ -48,6 +48,18 @@ public class AdminServiceImpl implements AdminService {
 		
 		return feignClientHelper.createEmployee(employee);
 	}
-
+	@Override
+	public EmployeeBo getEmployeeByIdRestTemplate(int id) {
+        EmployeeEo employee = restTemplateHelper.getEmployeeById(id);
+        return employeeMapper.eoToBo(employee);
+    }
+    
+	@Override
+    public ResponseEntity<EmployeeBo> createEmployeeRestTemplate(EmployeeBo employeeBo) {
+        EmployeeEo employeeEo = employeeMapper.boToEo(employeeBo);
+        ResponseEntity<EmployeeEo> responseEntity = restTemplateHelper.createEmployee(employeeEo);
+        EmployeeBo createdEmployeeBo = employeeMapper.eoToBo(responseEntity.getBody());
+        return ResponseEntity.status(responseEntity.getStatusCode()).body(createdEmployeeBo);
+    }
 	
 }

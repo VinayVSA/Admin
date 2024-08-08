@@ -40,6 +40,27 @@ dependencies {
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	
+	testImplementation 'com.github.tomakehurst:wiremock-jre8:2.32.0'
+    
+     testImplementation 'javax.servlet:javax.servlet-api:4.0.1'
+     
+    // Add Jetty dependencies
+    implementation 'org.eclipse.jetty:jetty-util:9.4.44.v20210927'
+    implementation 'org.eclipse.jetty:jetty-server:9.4.44.v20210927'
+    implementation 'org.eclipse.jetty:jetty-http:9.4.44.v20210927'
+    implementation 'org.eclipse.jetty:jetty-io:9.4.44.v20210927'
+    implementation 'org.eclipse.jetty:jetty-security:9.4.44.v20210927'
+    implementation 'org.eclipse.jetty:jetty-servlet:9.4.44.v20210927'
+    implementation 'org.eclipse.jetty:jetty-webapp:9.4.44.v20210927'
+    
+    
+    implementation 'io.github.resilience4j:resilience4j-spring-boot3:2.0.2'
+    
+    implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
+    
+    //implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 }
 
 sourceSets {
