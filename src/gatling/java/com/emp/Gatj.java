@@ -1,7 +1,4 @@
-package gatling.java.com.example;
-
-
-
+package com.emp;
 
 
 import io.gatling.javaapi.http.*;
@@ -32,4 +29,3 @@ HttpProtocolBuilder httpProtocol = http.baseUrl("http://localhost:8081").acceptH
 
 
 }
-

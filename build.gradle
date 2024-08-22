@@ -64,10 +64,19 @@ dependencies {
     //implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     
+    //wiremock
+    testImplementation 'com.github.tomakehurst:wiremock-jre8:2.32.0'
+    
+    
     //GatLing Dependency
     testImplementation 'io.gatling.highcharts:gatling-charts-highcharts:3.11.5'
 	testImplementation 'io.gatling:gatling-core:3.11.5'
 	testImplementation 'io.gatling:gatling-http:3.11.5'
+	
+	// Scala-specific dependencies
+       //implementation 'org.scala-lang:scala-library:2.13.8'
+       
+       implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 }
 
 sourceSets {
